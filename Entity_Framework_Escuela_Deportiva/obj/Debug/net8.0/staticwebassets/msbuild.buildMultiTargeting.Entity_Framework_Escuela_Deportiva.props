@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Entity_Framework_Escuela_Deportiva.props" />
+</Project>
