@@ -1,4 +1,5 @@
 using Entity_Framework_Escuela_Deportiva.Data;
+using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<EscuelaDeportivaContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EscuelaDeportiva"));
+});
 
 var app = builder.Build();
 

@@ -1,0 +1,72 @@
+﻿@using Newtonsoft.Json
+@model List<Horario>
+
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.13/index.global.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'resourceTimelineDay',
+                resources: function (fetchInfo, successCallback, failureCallback) {
+                    $.ajax({
+                        url: '@Url.Action("GetTrainingSchedules", "Horario")',
+                        type: 'GET',
+                        success: function (data) {
+                            var resourceObjects = data.reduce(function (acc, item) {
+                                if (!acc.some(function (res) { return res.id === item.Grupo; })) {
+                                    acc.push({ id: item.Grupo, title: item.Grupo });
+                                }
+                                return acc;
+                            }, []);
+                            successCallback(resourceObjects);
+                        }
+                    });
+                },
+                events: function (fetchInfo, successCallback, failureCallback) {
+                    $.ajax({
+                        url: '@Url.Action("GetTrainingSchedules", "Horario")',
+                        type: 'GET',
+                        success: function (data) {
+                            var events = data.map(function (item) {
+                                var start = moment(item.HoraInicio, 'HH:mm:ss');
+                                var end = moment(item.HoraFin, 'HH:mm:ss');
+                                var allDay = false;
+
+                                if (start.hour() === 0 && end.hour() === 0) {
+                                    allDay = true;
+                                    start = moment().startOf('day');
+                                    end = moment().endOf('day');
+                                }
+
+                                return {
+                                    title: 'Entrenamiento',
+                                    start: start,
+                                    end: end,
+                                    allDay: allDay,
+                                    resourceId: item.Grupo,
+                                    color: item.training ? 'yellow' : 'blue'
+                                };
+                            });
+                            successCallback(events);
+                        }
+                    });
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</head>
+<body>
+    <h1>Horarios de Entrenamiento</h1>
+    <div id="calendar" style="width: 100%"></div>
+</body>
+</html>
+
