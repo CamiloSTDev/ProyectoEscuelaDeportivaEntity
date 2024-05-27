@@ -14,21 +14,16 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Horarios.ToListAsync());
+            return View();
         }
 
         public async Task<IActionResult> GetTrainingSchedules()
         {
-            var horarios = await _context.Horarios.ToListAsync();
-            var events = horarios.Select(h => new {
-                title = h.Grupos,
-                date=h.Fecha,
-                start = h.HoraInicio,
-                end = h.HoraFin
-            });
-            return Json(new { data = events });
+            var lista = await _context.Horarios.ToListAsync();
+            string JsonResult = JsonConvert.SerializeObject(lista, Formatting.Indented);
+            return Json(JsonResult);
         }
     }
 
