@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\horarios.json",
+      "PackagePath": "staticwebassets\\horarios.json"
+    },
+    {
+      "Id": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\js\\calendar.js",
+      "PackagePath": "staticwebassets\\js\\calendar.js"
+    },
+    {
       "Id": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
