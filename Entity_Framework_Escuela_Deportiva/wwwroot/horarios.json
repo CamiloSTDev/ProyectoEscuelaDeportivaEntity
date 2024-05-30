@@ -1,32 +1,32 @@
 {
-  "events": [
-    {
-      "IdHorario": 111,
-      "Fecha": "2024-03-30",
-      "HoraInicio": "08:00:00",
-      "HoraFin": "10:00:00",
-      "Grupos": []
-    },
-    {
-      "IdHorario": 222,
-      "Fecha": "2024-03-30",
-      "HoraInicio": "10:00:00",
-      "HoraFin": "12:00:00",
-      "Grupos": []
-    },
-    {
-      "IdHorario": 333,
-      "Fecha": "2024-03-30",
-      "HoraInicio": "12:00:00",
-      "HoraFin": "02:00:00",
-      "Grupos": []
-    },
-    {
-      "IdHorario": 444,
-      "Fecha": "2024-03-30",
-      "HoraInicio": "02:30:00",
-      "HoraFin": "04:30:00",
-      "Grupos": []
-    }
+"events":[
+  {
+    "id": 111,
+    "title": "minitenis",
+    "start": "2024-03-30T08:00:00",
+    "end": "2024-03-30T10:00:00"
+
+  },
+  {
+    "id": 222,
+    "title": "juvenil",
+    "start": "2024-03-30T10:00:00",
+    "end": "2024-03-30T12:00:00"
+
+  },
+  {
+    "id": 333,
+    "title": "intermedio",
+    "start": "2024-03-30T12:00:00",
+    "end": "2024-03-30T02:00:00"
+
+  },
+  {
+    "IdHorario": 444,
+    "title": "Avanzado",
+    "start": "2024-03-30T02:30:00",
+    "end": "2024-03-30T04:30:00"
+
+  }
   ]
 }

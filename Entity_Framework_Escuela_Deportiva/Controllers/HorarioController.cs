@@ -1,7 +1,10 @@
-﻿using Entity_Framework_Escuela_Deportiva.Models;
+﻿using Entity_Framework_Escuela_Deportiva.api;
+using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
@@ -9,6 +12,9 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
     {
         private readonly EscuelaDeportivaContext _context;
 
+
+        
+        
         public HorarioController(EscuelaDeportivaContext context)
         {
             _context = context;
@@ -25,7 +31,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
 
             var lista = await _context.Horarios.ToListAsync();
 
-            var eventos = new { events = lista };
+            var eventos = new { lista };
 
 
             // Crear un archivo en la ruta especificada
@@ -45,10 +51,22 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
 
 
             // Devolver un objeto IActionResult que indica que el archivo se ha creado correctamente
-
-            return Content("Archivo horarios.json creado correctamente", "text/plain");
+            return Json(eventos);
+            //return Content("Archivo horarios.json creado correctamente", "text/plain");
 
         }
+
+        //public static List<HorarioController> ConsultarHorario()
+        //{
+        //    List<HorarioController> lista = new List<HorarioController>();
+        //    SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM Horario"));
+        //    SqlDataReader reader = cmd.ExecuteReader();
+        //    while (reader.Read())
+        //    {
+
+        //    }
+        //}
+
     }
 
 
