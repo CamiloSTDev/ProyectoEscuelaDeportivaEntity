@@ -1,4 +1,4 @@
-﻿using Entity_Framework_Escuela_Deportiva.api;
+﻿
 using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;

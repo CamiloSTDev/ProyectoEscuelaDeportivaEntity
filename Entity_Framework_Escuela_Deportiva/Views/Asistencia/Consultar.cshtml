@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Consultar Asistencia";
+}
+
+<h1>Consultar Asistencia</h1>
+
+@if (Model != null)
+{
+    <p>Estudiante: @Model.Estudiante.Nombres @Model.Estudiante.Apellidos</p>
+    <p>Asistencia Total: @Model.Asistencia.AsisTotal</p>
+}
+else
+{
+    <p>No se encontró información de asistencia.</p>
+}
