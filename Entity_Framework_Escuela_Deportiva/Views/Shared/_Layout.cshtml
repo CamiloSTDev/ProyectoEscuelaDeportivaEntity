@@ -53,7 +53,7 @@
 
 </head>
 <body>
-    <header>
+   @*  <header>
         <nav class="navbar navbar-expand-sm navbar-vertical bg-white border-bottom box-shadow mb-3">
             <div class="container body-content content main-content w-30">
                 <a class="navbar-brand container position-relative" style="top: -450px; left: -40px;" asp-area="" asp-controller="Home" asp-action="Index">Next Gen</a>
@@ -86,7 +86,29 @@
 
         </nav>
 
-    </header>
+    </header> *@
+    <div class="flex">
+        <nav class="bg-white dark:bg-zinc-800 border-r border-zinc-300 dark:border-zinc-700 w-64 min-h-screen">
+            <div class="p-4">
+                <a href="#" class="text-blue-500 dark:text-zinc-300 text-lg font-bold">Next Gen</a>
+            </div>
+            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                Home
+            </button>
+            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                Privacy
+            </button>
+            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                Horario
+            </button>
+            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                Asistencia
+            </button>
+            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                Asistencia Consultar
+            </button>
+        </nav>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
