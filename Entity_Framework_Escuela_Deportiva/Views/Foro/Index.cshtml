@@ -1,40 +1,51 @@
-﻿<html>
-  <head>
+@model IEnumerable<Entity_Framework_Escuela_Deportiva.Models.Foro>
+
+<!DOCTYPE html>
+<html>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var successMessage = '@TempData["SuccessMessage"]';
+            var errorMessage = '@TempData["ErrorMessage"]';
+
+            if (successMessage) {
+                alert(successMessage);
+            }
+
+            if (errorMessage) {
+                alert(errorMessage);
+            }
+        });
+    </script>
+</head>
+<body>
     <div class="bg-white dark:bg-zinc-800 min-h-screen">
-    <header class="bg-blue-500 dark:bg-zinc-900 text-white dark:text-zinc-200 p-4">
-        <h1 class="text-2xl font-bold">Next Gen Forum</h1>
-    </header>
-    <main class="p-4">
-        <div class="flex items-center space-x-2 mb-4">
-            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring focus:ring-blue-500 dark:focus:ring-zinc-500">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Buscar</button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
-                <h2 class="text-lg font-bold mb-2">Post Title</h2>
-                <p class="text-zinc-600 dark:text-zinc-300">Post content goes here...</p>
-                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded-lg">Mirar publicacion</button>
+        <header class="bg-blue-500 dark:bg-zinc-900 text-white dark:text-zinc-200 p-4">
+            <h1 class="text-2xl font-bold">Next Gen Forum</h1>
+        </header>
+        <main class="p-4">
+            <div class="flex items-center space-x-2 mb-4">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring focus:ring-blue-500 dark:focus:ring-zinc-500">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Buscar</button>
             </div>
-            <div class="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
-                <h2 class="text-lg font-bold mb-2">Tennis Match Highlights</h2>
-                <p class="text-zinc-600 dark:text-zinc-300">Check out the latest tennis match highlights...</p>
-                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded-lg">Mirar publicacion</button>
+            <a href="@Url.Action("Create")" class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4 inline-block">Crear Nueva Publicación</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach (var foro in Model)
+                {
+                    <div class="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
+                        <h2 class="text-lg font-bold mb-2">@foro.IdPublicacion</h2>
+                        <p class="text-zinc-600 dark:text-zinc-300">Contenido de la publicación...</p>
+                        <a href="@Url.Action("Edit", new { id = foro.IdForo })" class="mt-2 bg-blue-500 text-white px-3 py-1 rounded-lg">Editar Publicación</a>
+                    </div>
+                }
             </div>
-            <div class="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
-                <h2 class="text-lg font-bold mb-2">Top 10 Tennis Players</h2>
-                <p class="text-zinc-600 dark:text-zinc-300">Discover who are currently the top 10 tennis players...</p>
-                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded-lg">Mirar publicacion</button>
-            </div>
-        </div>
-    </main>
-    <footer class="bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 p-4">
-        <p>&copy; 2024 Next Gen Forum. Todos los derechos reservados.</p>
-    </footer>
-</div>
-  </body>
+        </main>
+        <footer class="bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 p-4">
+            <p>&copy; 2024 Next Gen Forum. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
 </html>
