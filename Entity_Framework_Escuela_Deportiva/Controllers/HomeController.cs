@@ -2,8 +2,13 @@ using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -28,5 +33,12 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task<IActionResult>Salir()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Acceso");
+        }
+
     }
 }

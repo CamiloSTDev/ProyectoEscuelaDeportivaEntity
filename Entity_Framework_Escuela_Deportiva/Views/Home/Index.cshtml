@@ -1,7 +1,24 @@
-﻿@{
+﻿
+@using System.Security.Claims;
+@{
     ViewData["Title"] = "Home Page";
 }
+
+
+
+
+<body>
 <section class="row" aria-labelledby="aspnetTitle">
+    <div class="text.right">
+
+        @if(User.Identity!.IsAuthenticated)
+        {
+            <h3 class="display-4">Bienvenido
+                @User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault()
+            </h3>
+        }
+
+    </div>
     <h1 id="aspnetTitle">¡Sobre nosotros!</h1>
     <p class="lead">
         Next Gen Tennis Academy es una prestigiosa escuela de tenis
@@ -32,3 +49,4 @@
     </section>
 
 </div>
+</body>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Entity_Framework_Escuela_Deportiva.styles.css" asp-append-version="true" />
     <style>
+        
         .navbar-vertical {
             width: 100px;
             position: fixed;
@@ -15,18 +16,32 @@
             left: 0;
             padding: 20px;
             height: 100%;
-            background-color: #f5f5f5;
-            border-right: 1px solid #ddd;
+            background-color: black;
+            border-right: 1px solid black;
+        }
+
+        .nav-link-N {
+            color: lawngreen;
+            text-decoration: none;
         }
 
             .navbar-vertical .nav-link {
                 display: block;
+                color: yellow;
                 padding: 5px 0;
             }
 
                 .navbar-vertical .nav-link:hover {
-                    background-color: #ddd;
+                    color: navy;
                 }
+
+        .nav-link-C {
+            color:darkmagenta;
+        }
+
+        .nav-link-C:hover {
+            color: maroon;
+        }
 
      .main-content {
     padding-top: 60px; /* adjust this value to match the height of the navbar */
@@ -48,67 +63,82 @@
             flex-direction: column;
          
     }
+    
+
+    footer{
+        background-color: forestgreen;
+    }
 
     </style>
 
 </head>
 <body>
-   @*  <header>
-        <nav class="navbar navbar-expand-sm navbar-vertical bg-white border-bottom box-shadow mb-3">
-            <div class="container body-content content main-content w-30">
-                <a class="navbar-brand container position-relative" style="top: -450px; left: -40px;" asp-area="" asp-controller="Home" asp-action="Index">Next Gen</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+    <header>
+        <nav class="navbar-vertical ">
+            <div class="container justify-content-between">
+                
+                @* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-column">
+                </button> *@
+                <div class="navbar-vertical  d-sm-inline-flex flex-column">
+                    
                     <ul class="navbar-vertical">
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link-N" style="top: 0px; left: 0px;" asp-area="" asp-controller="Home" asp-action="Index">Next Gen</a>
+                        <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Horario" asp-action="Index">Horario</a>
+                        <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link " asp-area="" asp-controller="Horario" asp-action="Index">Horario</a>
                         </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Asistencia" asp-action="Index">Asistencia</a>
+                        <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link " asp-area="" asp-controller="Asistencia" asp-action="Index">Asistencia</a>
                         </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Asistencia" asp-action="Consultar">Asistencia</a>
+                        @* <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link " asp-area="" asp-controller="Asistencia" asp-action="Consultar">Asistencia</a>
+                        </li> *@
+                        <li class="nav-link" style="top: 0px; left: 50px;">
+                            <a class="nav-link-C " asp-area="" asp-controller="Home" asp-action="Salir">Salir</a>
                         </li>
 
                     </ul>
-                    <partial name="_LoginPartial" />
+                    @* <partial name="_LoginPartial" /> *@
                 </div>
             </div>
 
         </nav>
 
-    </header> *@
-    <div class="flex">
-        <nav class="bg-white dark:bg-zinc-800 border-r border-zinc-300 dark:border-zinc-700 w-64 min-h-screen">
+    </header> 
+    @* <div class="flex navbar-vertical">
+        <nav class="navbar-vertical justify-content-between  dark:bg-zinc-800 border-r border-zinc-300 dark:border-zinc-700 w-64 min-h-screen">
             <div class="p-4">
-                <a href="#" class="text-blue-500 dark:text-zinc-300 text-lg font-bold">Next Gen</a>
+                <a href="#" class="nav-link text-blue-500 dark:text-zinc-300 text-lg font-bold">Next Gen</a>
             </div>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
                 Home
             </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <br />
+            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
                 Privacy
             </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <br />
+            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
                 Horario
             </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <br />
+            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
                 Asistencia
             </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <br />
+            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
                 Asistencia Consultar
             </button>
+            <br />
         </nav>
-    </div>
+    </div> *@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
