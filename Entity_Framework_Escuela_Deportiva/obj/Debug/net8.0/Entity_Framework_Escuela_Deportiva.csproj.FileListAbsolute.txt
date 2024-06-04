@@ -535,7 +535,6 @@ C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.RazorAssemblyInfo.cache
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.RazorAssemblyInfo.cs
-C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.sourcelink.json
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\wwwroot\horarios.json
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\appsettings.json
