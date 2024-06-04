@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ovrflw\\Desktop\\EntityEscuelaDeportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {}
+    "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ovrflw\\Desktop\\EntityEscuelaDeportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {
+    "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ovrflw\\Desktop\\EntityEscuelaDeportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+        "projectUniqueName": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
         "projectName": "Entity_Framework_Escuela_Deportiva",
-        "projectPath": "C:\\Users\\ovrflw\\Desktop\\EntityEscuelaDeportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
-        "packagesPath": "C:\\Users\\ovrflw\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ovrflw\\Desktop\\EntityEscuelaDeportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
+        "projectPath": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+        "packagesPath": "C:\\Users\\Aprendiz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ovrflw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aprendiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

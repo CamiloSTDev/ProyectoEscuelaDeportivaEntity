@@ -4,124 +4,102 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Entity_Framework_Escuela_Deportiva</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Entity_Framework_Escuela_Deportiva.styles.css" asp-append-version="true" />
-    <style>
-        .navbar-vertical {
-            width: 100px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 20px;
-            height: 100%;
-            background-color: #f5f5f5;
-            border-right: 1px solid #ddd;
-        }
-
-            .navbar-vertical .nav-link {
-                display: block;
-                padding: 5px 0;
-            }
-
-                .navbar-vertical .nav-link:hover {
-                    background-color: #ddd;
-                }
-
-     .main-content {
-    padding-top: 60px; /* adjust this value to match the height of the navbar */
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-    .container-fluid.main-content {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-    .container.main-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-    .main-content.container{
-            display: flex;
-            flex-direction: column;
-         
-    }
-
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
 
 </head>
 <body>
-   @*  <header>
-        <nav class="navbar navbar-expand-sm navbar-vertical bg-white border-bottom box-shadow mb-3">
-            <div class="container body-content content main-content w-30">
-                <a class="navbar-brand container position-relative" style="top: -450px; left: -40px;" asp-area="" asp-controller="Home" asp-action="Index">Next Gen</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-column">
-                    <ul class="navbar-vertical">
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Horario" asp-action="Index">Horario</a>
-                        </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Asistencia" asp-action="Index">Asistencia</a>
-                        </li>
-                        <li class="nav-item container position-relative" style="top: 0px; left: 50px;">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Asistencia" asp-action="Consultar">Asistencia</a>
-                        </li>
-
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+    <header>
+    <div class="flex h-screen">
+            <nav class="bg-gray-800 tex6t-white w-[200px] h-full" style="background-color:#fff700">
+            <div class="py-4 px-6">
+                <a class="text-lg font-bold" href="#">
+                    Next Gen
+                </a>
             </div>
-
+            <div class="mt-8">
+                <ul class="space-y-4">
+                    <li>
+                            <a class="nav-link block px-4 py-2 rounded-md transition-colors" asp-area="" asp-controller="Home" asp-action="Index">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                            <a class="nav-link block px-4 py-2 rounded-md transition-colors" asp-area="" asp-controller="Horario" asp-action="Index">
+                            Horario
+                        </a>
+                    </li>
+                    <li>
+                            <a class="nav-link block px-4 py-2 rounded-md transition-colors" asp-area="" asp-controller="Asistencia" asp-action="Index">
+                            Asistencia
+                        </a>
+                    </li>
+                    <li>
+                            <a class="nav-link block px-4 py-2 rounded-md transition-colors" asp-area="" asp-controller="Foro" asp-action="Index">
+                            Foro
+                        </a>
+                    </li>
+                    <li>
+                            <a class="nav-link block px-4 py-2 rounded-md transition-colors" asp-area="" asp-controller="Estudiante" asp-action="Index">
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
-    </header> *@
-    <div class="flex">
-        <nav class="bg-white dark:bg-zinc-800 border-r border-zinc-300 dark:border-zinc-700 w-64 min-h-screen">
-            <div class="p-4">
-                <a href="#" class="text-blue-500 dark:text-zinc-300 text-lg font-bold">Next Gen</a>
-            </div>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Home
-            </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Privacy
-            </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Horario
-            </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Asistencia
-            </button>
-            <button class="block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Asistencia Consultar
-            </button>
-        </nav>
+        <div class="container flex-1 p-6">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+        </div>
     </div>
+    </header>
+    <style>
+        
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav {
+            width: 200px; /* ancho de la barra de navegación */
+
+        }
+
+        main {
+            flex: 1; /* ocupa el espacio restante */
+            padding: 20px; /* padding para separar el contenido de la barra de navegación */
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4 {
+            width: 33.33%; /* ancho de cada columna */
+            padding: 20px; /* padding para separar las columnas */
+        }
+        body{
+            background: #a5a5a5;
+        }
+        a:hover{
+            background-color: #ece400;
+        }
+    </style>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container text-right align-content-end">
             &copy; 2024 - Entity_Framework_Escuela_Deportiva - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
