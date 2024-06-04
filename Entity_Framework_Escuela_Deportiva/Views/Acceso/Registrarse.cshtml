@@ -22,11 +22,15 @@
                             <input class="form-control mb-3" type="text" placeholder="Nombres"  required asp-for="Nombres"/>
                             <input class="form-control mb-3" type="text" placeholder="Apellidos"  required asp-for="Apellidos"/>
                             <input class="form-control mb-3" type="text" placeholder="No.Documento" required asp-for="Doc"/>
-                            <input class="form-control mb-3" type="text" placeholder="Telefono"  required asp-for="Telefono"/>
+                            <input class="form-control mb-3" type="tel" placeholder="Telefono"  required asp-for="Telefono"/>
                             <input class="form-control mb-3" type="text" placeholder="Correo"  required asp-for="Correo"/>
-                            <input class="form-control mb-3" type="text" placeholder="Fecha de Nacimiento"  required asp-for="FechaNac"/>
+                            <input class="form-control mb-3" type="date" placeholder="Fecha de Nacimiento"  required asp-for="FechaNac"/>
                             <input class="form-control mb-3" type="password" placeholder="Contraseña"  required asp-for="Contraseña"/>
                             <input class="form-control mb-3" type="password" placeholder="Confirmar Contraseña"  required asp-for="ConfirmarContraseña"/>
+                            <input class="form-control mb-3" type="text" placeholder="Grupo" required asp-for="IdGrupo" />
+
+                            @
+
                             <div class="d-grid gap-2 mb-3">
                                 <button class="btn btn-primary" type="submit">Registrarse</button> 
                             </div>

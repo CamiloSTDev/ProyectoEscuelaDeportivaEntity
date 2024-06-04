@@ -19,5 +19,9 @@
 
         public string ConfirmarContraseña { get; set; } = null!;
 
+        public int IdGrupo { get; set; }
+
     }
+
+
 }

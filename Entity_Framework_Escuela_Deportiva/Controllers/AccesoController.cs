@@ -9,11 +9,15 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 
+
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
     public class AccesoController : Controller
     {
         private readonly EscuelaDeportivaContext _DbContext;
+
+        //public int IdGrupo { get; private set; }
+
         public AccesoController(EscuelaDeportivaContext DbContext)
         {
             _DbContext = DbContext;
@@ -34,6 +38,8 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
                 return View();
             }
 
+            
+
             Estudiante usuario = new()
             {
                 Nombres = modelo.Nombres,
@@ -42,12 +48,18 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
                 Telefono = modelo.Telefono,
                 Correo = modelo.Correo,
                 FechaNac = modelo.FechaNac,
-                Contraseña = modelo.Contraseña
+                Contraseña = modelo.Contraseña,
+                IdGrupo = modelo.IdGrupo,
 
             };
 
+           
+
+
             await _DbContext.Estudiantes.AddAsync(usuario);
             await _DbContext.SaveChangesAsync();
+
+            
 
             if (usuario.IdUsuario != 0) return RedirectToAction("Login", "Acceso");
 
@@ -99,4 +111,9 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
+
+    
+
+    
+
 }
