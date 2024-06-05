@@ -1,5 +1,6 @@
 using Entity_Framework_Escuela_Deportiva.Data;
 using Entity_Framework_Escuela_Deportiva.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,24 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+//autenticacion de middleware
+//public void ConfigureServices(IServiceCollection services)
+//{
+//    services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//       .AddCookie(options =>
+//       {
+//           options.LoginPath = "/Account/Login";
+//           options.LogoutPath = "/Account/Logout";
+//       });
+//}
+
+//public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+//{
+//    app.UseAuthentication();
+//    app.UseAuthorization();
+//    //...
+//}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

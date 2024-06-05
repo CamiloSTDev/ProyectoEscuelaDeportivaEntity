@@ -1,6 +1,7 @@
 ﻿using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
@@ -27,11 +28,12 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Foro foro, int usuarioId)
+        public async Task<IActionResult> Create(Foro foro)
         {
             if (ModelState.IsValid)
             {
-                foro.IdEstudiante = usuarioId; // Asociar el ID del usuario actual
+                var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                foro.IdEstudiante = int.Parse(userId); // Asociar el ID del usuario actual
                 _context.Foros.Add(foro);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Publicación creada exitosamente.";
@@ -78,5 +80,6 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
             TempData["ErrorMessage"] = "No se pudo actualizar la publicación.";
             return View(foro);
         }
+        
     }
 }

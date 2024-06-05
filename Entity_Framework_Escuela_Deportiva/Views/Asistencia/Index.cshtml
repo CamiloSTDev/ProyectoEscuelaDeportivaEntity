@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Entity_Framework_Escuela_Deportiva.Controllers.AsistenciaController.DocumentoModel;
+
+@{
 
     ViewData["Title"] = "Asistencia";
 
@@ -15,46 +17,36 @@
             <h1 class="text-3xl font-bold">Consulta de Asistencia</h1>
             <p class="text-gray-500 dark:text-gray-400">Ingresa tu número de documento para verificar tu asistencia.</p>
         </div>
-        <div class="space-y-4">
-            <div class="space-y-2">
-                <label class="block text-sm font-medium leading-none text-center" for="document-number">Número de Documento</label>
-                <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="document-number" placeholder="Ingresa tu número de documento" />
+        <form asp-controller="Asistencia" asp-action="ConsultarAsistencia" method="post">
+            <div class="form-group">
+                <label asp-for="Documento" class="control-label block text-sm font-medium leading-none text-center mt-2"></label><br />
+                <input asp-for="Documento" class="form-control  flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Ingresa tu número de documento" /><br />
+                <span asp-validation-for="Documento" class="text-danger"></span>
             </div>
-            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full" type="submit">Consultar</button>
-        </div>
+            <div class="form-group">
+
+                <input type="submit" value="Consultar Asistencia" class="btn btn-primary inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gray-700 text-white hover:bg-gray-600 h-10 px-4 py-2 w-full border border-gray-500" type="submit" />
+
+            </div>
+</form>
         <div class="bg-white dark:bg-gray-950 rounded-lg shadow-lg p-6 space-y-4">
-            @if (ViewBag.Estudiantes != null && ViewBag.Estudiantes.Any())
+            @if (ViewBag.Estudiantes != null && ViewBag.Estudiantes.Length > 0)
             {
                 <div class="flex items-center space-x-4">
                     <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
 
                     </span>
                     <div>
-                        <h2 class="text-lg font-bold">@ViewBag.Estudiantes[0].Nombres, @ViewBag.Estudiantes[0].Apellidos</h2>
-                        <p class="text-gray-500 dark:text-gray-400">Estudiante</p>
+                        <h2 class="text-lg font-bold">@ViewBag.Estudiantes[0].Nombres, @ViewBag.Estudiantes[0].Apellidos</h2>                        
+                        <p class="text-gray-500 dark:text-gray-400">Total Asistencias: @ViewBag.TotalAsis</p>
                     </div>
                 </div>
-                <div class="space-y-2">
-                    <div class="flex items-center justify-between">
-                        <p class="text-gray-500 dark:text-gray-400">Fecha de Asistencia:</p>
-                        <p>@DateTime.Now</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <p class="text-gray-500 dark:text-gray-400">Hora de Entrada:</p>
-                        <p>@ViewBag.Horarios[0].HoraInicio</p>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <p class="text-gray-500 dark:text-gray-400">Hora de Salida:</p>
-                        <p>@ViewBag.Horarios[0].HoraFin</p>
-                    </div>
-                </div>
+
             }
             else
             {
                 <p class="text-red-500">No se encontraron datos de asistencia.</p>
             }
         </div>
-    </div>
-    </body>
-    </html>
-
+</body>
+</html>
