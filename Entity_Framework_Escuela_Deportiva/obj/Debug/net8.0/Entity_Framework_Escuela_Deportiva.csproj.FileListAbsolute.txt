@@ -1053,3 +1053,4 @@ C:\Users\Aprendiz\Desktop\Trabajo\Entity_Framework_Escuela_Deportiva\obj\Debug\n
 C:\Users\Aprendiz\Desktop\Trabajo\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.pdb
 C:\Users\Aprendiz\Desktop\Trabajo\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.genruntimeconfig.cache
 C:\Users\Aprendiz\Desktop\Trabajo\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\ref\Entity_Framework_Escuela_Deportiva.dll
+C:\Users\Isagi06#15\Desktop\Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.sourcelink.json

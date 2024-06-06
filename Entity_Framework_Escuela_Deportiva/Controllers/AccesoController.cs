@@ -3,6 +3,7 @@ using Entity_Framework_Escuela_Deportiva.Data;
 using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.EntityFrameworkCore;
 using Entity_Framework_Escuela_Deportiva.ViewModels;
+using Entity_Framework_Escuela_Deportiva.Views;
 
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
@@ -16,7 +17,9 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
     {
         private readonly EscuelaDeportivaContext _DbContext;
 
-        //public int IdGrupo { get; private set; }
+
+
+
 
         public AccesoController(EscuelaDeportivaContext DbContext)
         {
@@ -38,7 +41,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
                 return View();
             }
 
-            
+
 
             Estudiante usuario = new()
             {
@@ -53,13 +56,13 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
 
             };
 
-           
+
 
 
             await _DbContext.Estudiantes.AddAsync(usuario);
             await _DbContext.SaveChangesAsync();
 
-            
+
 
             if (usuario.IdUsuario != 0) return RedirectToAction("Login", "Acceso");
 
@@ -70,7 +73,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            if(User.Identity!.IsAuthenticated) return RedirectToAction("Index", "Home");
+            if (User.Identity!.IsAuthenticated) return RedirectToAction("Index", "Home");
 
             return View();
         }
@@ -110,10 +113,27 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        //Ver informacion del usuario despues de registrarse e iniciar sesion
+
+
+        [HttpGet]
+        public IActionResult Perfil()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Perfil(UsuarioVM modelo)
+        {
+            return View();
+        }
     }
 
-    
 
-    
+
+
+
 
 }

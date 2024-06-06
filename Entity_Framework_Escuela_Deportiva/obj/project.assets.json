@@ -8285,23 +8285,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aprendiz\\.nuget\\packages\\": {},
+    "C:\\Users\\Isagi06#15\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aprendiz\\Desktop\\Trabajo\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+      "projectUniqueName": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
       "projectName": "Entity_Framework_Escuela_Deportiva",
-      "projectPath": "C:\\Users\\Aprendiz\\Desktop\\Trabajo\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
-      "packagesPath": "C:\\Users\\Aprendiz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aprendiz\\Desktop\\Trabajo\\Entity_Framework_Escuela_Deportiva\\obj\\",
+      "projectPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+      "packagesPath": "C:\\Users\\Isagi06#15\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aprendiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Isagi06#15\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

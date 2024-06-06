@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entity_Framework_Escuela_Deportiva.Models;
+using Entity_Framework_Escuela_Deportiva.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
@@ -8,5 +10,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         {
             return View();
         }
+
+   
     }
 }
