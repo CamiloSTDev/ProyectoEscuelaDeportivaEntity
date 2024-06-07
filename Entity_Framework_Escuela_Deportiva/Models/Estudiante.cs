@@ -5,7 +5,8 @@ namespace Entity_Framework_Escuela_Deportiva.Models;
 
 public partial class Estudiante
 {
-    public int IdUsuario { get; set; }
+    public static object? Identity { get; internal set; }
+    public int IdUsuario { get; set; } 
 
     public int Doc { get; set; }
 

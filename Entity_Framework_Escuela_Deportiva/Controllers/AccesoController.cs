@@ -3,7 +3,6 @@ using Entity_Framework_Escuela_Deportiva.Data;
 using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.EntityFrameworkCore;
 using Entity_Framework_Escuela_Deportiva.ViewModels;
-using Entity_Framework_Escuela_Deportiva.Views;
 
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
@@ -16,10 +15,6 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
     public class AccesoController : Controller
     {
         private readonly EscuelaDeportivaContext _DbContext;
-
-
-
-
 
         public AccesoController(EscuelaDeportivaContext DbContext)
         {
@@ -114,21 +109,6 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //Ver informacion del usuario despues de registrarse e iniciar sesion
-
-
-        [HttpGet]
-        public IActionResult Perfil()
-        {
-
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Perfil(UsuarioVM modelo)
-        {
-            return View();
-        }
     }
 
 

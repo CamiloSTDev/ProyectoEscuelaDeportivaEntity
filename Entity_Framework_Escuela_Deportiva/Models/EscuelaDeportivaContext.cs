@@ -6,6 +6,7 @@ namespace Entity_Framework_Escuela_Deportiva.Models;
 
 public partial class EscuelaDeportivaContext : DbContext
 {
+
     public EscuelaDeportivaContext()
     {
     }

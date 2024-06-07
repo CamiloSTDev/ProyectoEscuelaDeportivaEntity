@@ -3,7 +3,14 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<style>
 
+    .p{
+        color:red;
+    }
+
+
+</style>
 
 
 
@@ -13,9 +20,9 @@
 
         @if(User.Identity!.IsAuthenticated)
         {
-            <h3 class="display-4">Bienvenido
+            <p class="p p-display-4">Bienvenido
                 @User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault()
-            </h3>
+            </p>
         }
 
     </div>
