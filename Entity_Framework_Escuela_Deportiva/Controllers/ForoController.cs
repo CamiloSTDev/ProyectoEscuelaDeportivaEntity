@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using System.Linq;
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
@@ -32,54 +33,18 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                foro.IdEstudiante = int.Parse(userId); // Asociar el ID del usuario actual
+                //var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                /*foro.IdEstudiante = int.Parse(userId);*/ // Asociar el ID del usuario actual
+                foro.IdEstudiante = 9;
                 _context.Foros.Add(foro);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Publicación creada exitosamente.";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Foro");
             }
             TempData["ErrorMessage"] = "No se pudo crear la publicación.";
             return View(foro);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var foro = await _context.Foros.FindAsync(id);
-            if (foro == null)
-            {
-                return NotFound();
-            }
-            return View(foro);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, Foro foro)
-        {
-            if (id != foro.IdForo)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(foro);
-                    await _context.SaveChangesAsync();
-                    TempData["SuccessMessage"] = "Publicación actualizada exitosamente.";
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    TempData["ErrorMessage"] = "No se pudo actualizar la publicación.";
-                    return View(foro);
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            TempData["ErrorMessage"] = "No se pudo actualizar la publicación.";
-            return View(foro);
-        }
         
     }
 }

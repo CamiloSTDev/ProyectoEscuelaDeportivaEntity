@@ -10,17 +10,9 @@ public partial class Foro
     public int IdForo { get; set; }
     public string Titulo { get; set; }
     public string Contenido { get; set; }
-    
-    [Key]
-    public int IdPublicacion { get; set; }
-
-    public int IdEscuela { get; set; }
+    public int IdEscuela { get; set; } = 123456;
 
     public int IdEstudiante { get; set; }
-
-    public int IdDocente { get; set; }
-
-    public virtual Docente IdDocenteNavigation { get; set; } = null!;
 
     public virtual Escuela IdEscuelaNavigation { get; set; } = null!;
 

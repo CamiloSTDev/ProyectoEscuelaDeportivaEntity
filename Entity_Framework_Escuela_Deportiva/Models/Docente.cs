@@ -12,10 +12,6 @@ public partial class Docente
     public long Telefono { get; set; }
 
     public int IdGrupo { get; set; }
-
     public string Contraseña { get; set; } = null!;
-
-    public virtual ICollection<Foro> Foros { get; set; } = new List<Foro>();
-
     public virtual Grupo IdGrupoNavigation { get; set; } = null!;
 }

@@ -4,6 +4,7 @@ using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity_Framework_Escuela_Deportiva.Migrations
 {
     [DbContext(typeof(EscuelaDeportivaContext))]
-    partial class EscuelaDeportivaContextModelSnapshot : ModelSnapshot
+    [Migration("20240607202349_AcutalizacionDeForo")]
+    partial class AcutalizacionDeForo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

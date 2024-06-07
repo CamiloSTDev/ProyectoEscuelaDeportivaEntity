@@ -153,11 +153,6 @@ public partial class EscuelaDeportivaContext : DbContext
 
             entity.Property(e => e.IdForo).ValueGeneratedNever();
 
-            entity.HasOne(d => d.IdDocenteNavigation).WithMany(p => p.Foros)
-                .HasForeignKey(d => d.IdDocente)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_foro_Docente");
-
             entity.HasOne(d => d.IdEscuelaNavigation).WithMany(p => p.Foros)
                 .HasForeignKey(d => d.IdEscuela)
                 .OnDelete(DeleteBehavior.ClientSetNull)
