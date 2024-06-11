@@ -1,56 +1,72 @@
-﻿using Entity_Framework_Escuela_Deportiva.Data;
-using Entity_Framework_Escuela_Deportiva.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Entity_Framework_Escuela_Deportiva.Data;
 using Entity_Framework_Escuela_Deportiva.Models;
-
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Entity_Framework_Escuela_Deportiva.ViewModels;
+using Microsoft.AspNetCore.Identity;
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
     public class ProfileController : Controller
     {
-        
-            private EscuelaDeportivaContext _editcontext;
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddIdentity<IdentityUser, IdentityRole>()
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+               .AddDefaultTokenProviders();
+        }
 
-            public ProfileController(EscuelaDeportivaContext editcontext)
+        private readonly UserManager<IdentityUser> _editContext;
+        public ProfileController(UserManager<IdentityUser> editContext)
+        {
+            _editContext = editContext;
+        }
+
+        [HttpGet]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile()
+        {
+            var usuario_activo = await _editContext.GetUserAsync(User);
+            if (usuario_activo == null) 
             {
-                _editcontext = editcontext;
+                return NotFound();
             }
 
-            [HttpGet]
-            [Authorize]
-            public IActionResult EditProfile()
+            var model = new UsuarioEditVM
             {
-                var IdUsuario = IdUsuario.Identity.GetUserId();
-                var Usuario = _editcontext.Estudiantes.SingleOrDefault(u => u.IdUsuario == IdUsuario);
+                Nombres = usuario_activo.UserName!,
+                Correo = usuario_activo.Email!,
+                Telefono = usuario_activo.PhoneNumber!,
+                Contraseña = usuario_activo.PasswordHash!,
+                ConfirmarContraseña = usuario_activo.PasswordHash!,
+            };
 
-                return View(Usuario);
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile(UsuarioEditVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
             }
 
-            [HttpPost]
-            [Authorize]
-            public IActionResult EditProfile(Estudiante modelos)
+            var usuario_activo = await _editContext.GetUserAsync(User);
+            if (usuario_activo == null)
             {
-                var IdUsuario = IdUsuario.Identity.GetUserId();
-                var Usuario = _editcontext.Estudiantes.SingleOrDefault(u => u.IdUsuario == IdUsuario);
-
-                if (!ModelState.IsValid)
-                {
-                    return View(modelos);
-                }
-
-                Usuario.Doc = modelos.Doc;
-                Usuario.Nombres = modelos.Nombres;
-                // Agrega aquí cualquier otro campo que quieras permitir que se actualice
-
-                _editcontext.SaveChanges();
-
-                return RedirectToAction("Index", "Home");
+                return NotFound();
             }
-        
 
+            usuario_activo.UserName = model.Nombres;
+            usuario_activo.Email = model.Correo;
+            usuario_activo.PhoneNumber = model.Telefono;
+            usuario_activo.PasswordHash = model.Contraseña;
+            usuario_activo.PasswordHash = model.ConfirmarContraseña;
+
+            await _editContext.UpdateAsync(usuario_activo);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

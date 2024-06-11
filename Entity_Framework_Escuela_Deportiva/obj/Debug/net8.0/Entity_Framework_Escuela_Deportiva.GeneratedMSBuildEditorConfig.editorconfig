@@ -30,10 +30,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Acceso/EditPerfil.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXEVkaXRQZXJmaWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Acceso/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -88,6 +84,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Horario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Profile/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Shared/Error.cshtml]

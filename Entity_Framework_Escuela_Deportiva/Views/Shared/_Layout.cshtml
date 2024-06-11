@@ -76,7 +76,6 @@
     <header>
         <nav class="navbar-vertical ">
             <div class="container justify-content-between">
-                
                 @* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -101,47 +100,21 @@
                             <a class="nav-link " asp-area="" asp-controller="Asistencia" asp-action="Consultar">Asistencia</a>
                         </li> *@
                         <li class="nav-link" style="top: 0px; left: 50px;">
-                            <a class="nav-link-S " asp-area="" asp-controller="Home" asp-action="Salir">Salir</a>
+                            <a class="nav-link " asp-area="" asp-controller="Profile" asp-action="EditProfile">Profile</a>
                         </li>
+                        
                         <li class="nav-link" style="top: 0px; left: 50px;">
-                            <a class="nav-link " asp-area="" asp-controller="Acceso" asp-action="Perfil">Perfil</a>
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Salir">Salir</a>
                         </li>
 
                     </ul>
-                    @* <partial name="_LoginPartial" /> *@
+                    
                 </div>
             </div>
 
         </nav>
 
     </header> 
-    @* <div class="flex navbar-vertical">
-        <nav class="navbar-vertical justify-content-between  dark:bg-zinc-800 border-r border-zinc-300 dark:border-zinc-700 w-64 min-h-screen">
-            <div class="p-4">
-                <a href="#" class="nav-link text-blue-500 dark:text-zinc-300 text-lg font-bold">Next Gen</a>
-            </div>
-            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Home
-            </button>
-            <br />
-            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Privacy
-            </button>
-            <br />
-            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Horario
-            </button>
-            <br />
-            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Asistencia
-            </button>
-            <br />
-            <button class="nav-link block w-full py-2 text-left pl-4 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">
-                Asistencia Consultar
-            </button>
-            <br />
-        </nav>
-    </div> *@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
