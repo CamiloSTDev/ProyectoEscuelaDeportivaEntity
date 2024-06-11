@@ -1,0 +1,133 @@
+﻿/* Estilos globales */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #964B00;
+}
+
+/*body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease-in-out;
+}*/
+
+body {
+    background-color: #964B00; /* earthy terracotta */
+    color: #333; /* dark gray text */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 5rem;
+}
+
+.col-sm-4 {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card-header {
+    background-color: #964B00;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .card-header h3 {
+        margin: 0;
+        background-color: #964B00;
+    }
+
+.card-body {
+    padding: 20px;
+}
+
+.form-control {
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+    .form-control:focus {
+        border-color: #337ab7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.btn {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #964B00; /* earthy terracotta */
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .btn:hover {
+        background-color: #23527c;
+    }
+
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background-color: #ffe6e6;
+    color: #d9534f;
+    border-color: #d9534f;
+}
+
+ Tema oscuro 
+
+body.dark-theme {
+    background-color: #333;
+}
+
+    body.dark-theme.card {
+        background-color: #444;
+        border-color: #555;
+    }
+
+    body.dark-theme.card-header {
+        background-color: #555;
+        color: #fff;
+    }
+
+    body.dark-theme.form-control {
+        background-color: #444;
+        border-color: #555;
+        color: #fff;
+    }
+
+    body.dark-theme.btn {
+        background-color: #555;
+        color: #fff;
+    }
+
+    body.dark-theme.alert {
+        background-color: #666;
+        color: #fff;
+        border-color: #666;
+    }

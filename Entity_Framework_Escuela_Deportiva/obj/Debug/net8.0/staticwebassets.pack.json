@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Entity_Framework_Escuela_Deportiva.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\css\\Registro.css",
+      "PackagePath": "staticwebassets\\css\\Registro.css"
+    },
+    {
       "Id": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
