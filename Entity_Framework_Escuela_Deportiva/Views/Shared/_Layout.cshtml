@@ -8,68 +8,70 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Entity_Framework_Escuela_Deportiva.styles.css" asp-append-version="true" />
     <style>
+        
+                 .navbar-vertical {
+                    width: 100px;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    padding: 20px;
+                    height: 100%;
+                    background-color: black;
+                    border-right: 1px solid black;
+                    }
 
-        .navbar-vertical {
-            width: 100px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 20px;
-            height: 100%;
-            background-color: black;
-            border-right: 1px solid black;
-        }
+                    .nav-link-N {
+                      font-size: 26px;
+                      font-weight: bold;
+                      font-family: 'Playfair Display', serif;
+                      color: #ff9900; /* Naranja */
+                      text-decoration: underline;
+                    }
+      .navbar-vertical .nav-link {
+                        display: block;
+                        color: yellow;
+                        padding: 5px 0;
+                        ransition: color 0.3s ease-in;
+                    }
 
-        .nav-link-N {
-            color: lawngreen;
-            text-decoration: none;
-        }
+                        .navbar-vertical .nav-link:hover {
+                            color: red;
+                        }
 
-            .navbar-vertical .nav-link {
-                display: block;
-                color: yellow;
-                padding: 5px 0;
-            }
-
-                .navbar-vertical .nav-link:hover {
-                    color: navy;
+                .nav-link-S {
+                    color:darkmagenta;
                 }
 
-        .nav-link-S {
-            color:darkmagenta;
+                .nav-link-S:hover {
+                    color: maroon;
+                }
+
+             .main-content {
+             padding-top: 60px; 
+             padding-left: 15px;
+            padding-right: 15px;
         }
 
-        .nav-link-S:hover {
-            color: maroon;
+            .container-fluid.main-content {
+            margin-left: 0;
+            margin-right: 0;
         }
 
-     .main-content {
-    padding-top: 60px; /* adjust this value to match the height of the navbar */
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-    .container-fluid.main-content {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-    .container.main-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-    .main-content.container{
-            display: flex;
-            flex-direction: column;
+            .container.main-content {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+            .main-content.container{
+                    display: flex;
+                    flex-direction: column;
          
-    }
+            }
     
 
-    footer{
-        background-color: forestgreen;
-    }
-
-    </style>
+            footer{
+                background-color: forestgreen;
+            }  
+    </style> 
 
 </head>
 <body>
@@ -100,11 +102,11 @@
                             <a class="nav-link " asp-area="" asp-controller="Asistencia" asp-action="Consultar">Asistencia</a>
                         </li> *@
                         <li class="nav-link" style="top: 0px; left: 50px;">
-                            <a class="nav-link " asp-area="" asp-controller="Profile" asp-action="EditProfile">Profile</a>
+                            <a class="nav-link " asp-area="" asp-controller="Profile" asp-action="EditProfile">Edit Profile</a>
                         </li>
                         
                         <li class="nav-link" style="top: 0px; left: 50px;">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Salir">Salir</a>
+                            <a class="nav-link-S " asp-area="" asp-controller="Home" asp-action="Salir">Salir</a>
                         </li>
 
                     </ul>

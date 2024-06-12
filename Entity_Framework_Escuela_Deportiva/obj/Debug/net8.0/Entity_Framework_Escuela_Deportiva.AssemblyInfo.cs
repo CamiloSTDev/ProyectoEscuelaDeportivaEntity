@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Entity_Framework_Escuela_Deportiva")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c484c0cfa110c6c5122ac2fd140f0b97895819f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc5eef994352e4373f9e6dd16a4a54c979dbae14")]
 [assembly: System.Reflection.AssemblyProductAttribute("Entity_Framework_Escuela_Deportiva")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Entity_Framework_Escuela_Deportiva")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

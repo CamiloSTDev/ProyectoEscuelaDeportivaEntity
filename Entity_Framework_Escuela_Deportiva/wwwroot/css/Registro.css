@@ -22,6 +22,8 @@ body {
 }
 
 .card-header {
+    justify-content: center;
+    align-items: center;
     background-color: #964B00;
     color: #333;
     padding: 10px;

@@ -38,14 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlZ2lzdHJhcnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Asistencia/Consultar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYVxDb25zdWx0YXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Asistencia/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpc3RlbmNpYVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Estudiante/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,10 +72,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Horario/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Isagi06\#15/Desktop/Escuela Deportiva/Entity_Framework_Escuela_Deportiva/Views/Profile/EditProfile.cshtml]
