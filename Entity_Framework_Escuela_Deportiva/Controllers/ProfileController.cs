@@ -26,10 +26,10 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         public async Task<IActionResult> EditProfile()
         {
             var usuario_activo = await _editContext.GetUserAsync(User);
-            if (usuario_activo == null) 
-            {
-                return NotFound();
-            }
+            //if (usuario_activo == null) 
+            //{
+            //    return NotFound();
+            //}
 
             var model = new UsuarioEditVM
             {
@@ -40,7 +40,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
                 ConfirmarContraseña = usuario_activo.PasswordHash!,
             };
 
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -49,7 +49,7 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View();
+                return View(model);
             }
 
             var usuario_activo = await _editContext.GetUserAsync(User);

@@ -2,7 +2,7 @@
 /* Estilos generales */
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #964B00; /*earthy terracotta*/
+    background-color: #121e3a; /*earthy terracotta*/
     color: #333;
 }
 
@@ -10,10 +10,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #121e3a;
 }
 
 .card {
-    background-color: black;
+    background-color: #0e3d5f;
     color: #333;
     border: none;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -24,8 +25,8 @@ body {
 .card-header {
     justify-content: center;
     align-items: center;
-    background-color: #964B00;
-    color: #333;
+    background-color: #0a92a0;
+    color: white;
     padding: 10px;
     border-radius: 10px 10px 0 0;
 }
@@ -47,8 +48,9 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
+
 .btn-primary {
-    background-color: #964B00;
+    background-color: #ffa1bd;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
@@ -57,8 +59,12 @@ body {
 }
 
     .btn-primary:hover {
-        background-color: #23527c;
+        background-color: #3f305b;
     }
+
+.gid {
+    color: #ff0036;
+}
 
 /* Efecto de neón */
     .card {
