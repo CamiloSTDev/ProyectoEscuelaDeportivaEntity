@@ -21,6 +21,14 @@ builder.Services.AddDbContext<EscuelaDeportivaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EscuelaDeportiva"));
 });
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Acceso/Login";
+
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,34 +43,19 @@ else
     app.UseHsts();
 }
 
-//autenticacion de middleware
-//public void ConfigureServices(IServiceCollection services)
-//{
-//    services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//       .AddCookie(options =>
-//       {
-//           options.LoginPath = "/Account/Login";
-//           options.LogoutPath = "/Account/Logout";
-//       });
-//}
 
-//public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-//{
-//    app.UseAuthentication();
-//    app.UseAuthorization();
-//    //...
-//}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Acceso}/{action=Login}/{id?}");
 app.MapRazorPages();
 
 app.Run();

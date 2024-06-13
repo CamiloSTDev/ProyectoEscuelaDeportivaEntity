@@ -1,0 +1,69 @@
+﻿@model Entity_Framework_Escuela_Deportiva.ViewModels.UsuarioVM;
+@{
+    Layout = null;
+}
+
+<html>
+    <head>
+       <title>Registrarse</title>
+    <link rel="stylesheet" href="~/css/Registro.css" asp-append-version="true" />
+    
+    </head>
+    <body>
+    
+        <div class="row mt-5 justify-content-center">
+            <div class="col-sm-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Registrarse</h3>
+                    </div>
+                    <div class="card-body">
+
+                    <form asp-controller="Acceso" asp-action="Registrarse" method="post">
+                            <input class="form-control mb-3" type="text" placeholder="Nombres"  required asp-for="Nombres"/>
+                            <input class="form-control mb-3" type="text" placeholder="Apellidos"  required asp-for="Apellidos"/>
+                            <input class="form-control mb-3" type="text" placeholder="No.Documento" required asp-for="Doc"/>
+                            <input class="form-control mb-3" type="tel" placeholder="Telefono"  required asp-for="Telefono"/>
+                            <input class="form-control mb-3" type="email" placeholder="Correo"  required asp-for="Correo"/>
+                            <input class="form-control mb-3" type="date" placeholder="Fecha de Nacimiento"  required asp-for="FechaNac"/>
+                            <input class="form-control mb-3" type="password" placeholder="Contraseña"  required asp-for="Contraseña"/>
+                            <input class="form-control mb-3" type="password" placeholder="Confirmar Contraseña"  required asp-for="ConfirmarContraseña"/>
+                            <label class="gid">¿A qué Grupo pertenece?</label>
+                            <select class="form-control mb-3" name="IdGrupo">
+                                <option value="1" placeholder="IdGrupo" >Infantil</option>
+                                <option value="2" selected placeholder="IdGrupo" >Intermedio</option>
+                                <option value="3" placeholder="IdGrupo" >Juvenil</option>
+                                <option value="4" placeholder="IdGrupo">Avanzado</option>
+                            </select>
+                           
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="btn btn-primary" type="submit">Registrarse</button> 
+                            </div> <br />
+
+                        @if(ViewData["Mensaje"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        }
+                        ¿Ya tienes una cuenta? <a asp-controller="Acceso" asp-action="Login">Iniciar Sesión</a>
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
