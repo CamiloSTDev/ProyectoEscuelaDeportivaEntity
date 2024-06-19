@@ -1,0 +1,49 @@
+﻿@model Factura
+
+<h1>Factura Detalles</h1>
+
+<form asp-action="GetInvoiceByDocNumber">
+    <div class="form-group">
+        <label for="docNumber" class="control-label">Documento:</label>
+        <input type="text" id="docNumber" name="docNumber" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Consultar" class="btn btn-primary" />
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Información de la Factura</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Fecha de Factura</th>
+            <td>@Model.FechaFac</td>
+        </tr>
+        <tr>
+            <th>Valor de Factura</th>
+            <td>@Model.ValorFac</td>
+        </tr>
+    </table>
+
+    <h2>Estudiantes Asociados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Documento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var estudiante in Model.Estudiantes)
+            {
+                <tr>
+                    <td>@estudiante.Nombres</td>
+                    <td>@estudiante.Apellidos</td>
+                    <td>@estudiante.Doc</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

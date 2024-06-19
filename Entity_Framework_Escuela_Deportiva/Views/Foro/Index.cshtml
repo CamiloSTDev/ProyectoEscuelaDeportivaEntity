@@ -1,4 +1,4 @@
-@model IEnumerable<Entity_Framework_Escuela_Deportiva.Models.Foro>
+﻿@model IEnumerable<Entity_Framework_Escuela_Deportiva.Models.Foro>
 
 <!DOCTYPE html>
 <html>
@@ -6,20 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var successMessage = '@TempData["SuccessMessage"]';
-            var errorMessage = '@TempData["ErrorMessage"]';
-
-            if (successMessage) {
-                alert(successMessage);
-            }
-
-            if (errorMessage) {
-                alert(errorMessage);
-            }
-        });
-    </script>
     <style>
         #foroMain {
             display: flex;
@@ -51,7 +37,15 @@
             <h1 class="text-2xl font-bold">Next Gen Forum</h1>
         </header>
         <main class="p-4">
-            <a href="@Url.Action("Create")" class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4 inline-block">Crear Nueva Publicación</a>            
+            <a href="@Url.Action("Create")" class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4 inline-block">Crear Nueva Publicación</a>
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 @foreach (var foro in Model)
                 {

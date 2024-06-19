@@ -29,13 +29,14 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Foro foro)
         {
             if (ModelState.IsValid)
             {
-                //var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                /*foro.IdEstudiante = int.Parse(userId);*/ // Asociar el ID del usuario actual
-                foro.IdEstudiante = 9;
+                // Asignar valores automáticamente
+                foro.IdEscuela = 123456;
+                foro.IdEstudiante = 9; // Set the ID of the user
                 _context.Foros.Add(foro);
                 await _context.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Publicación creada exitosamente.";

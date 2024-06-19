@@ -526,3 +526,20 @@ C:\Users\ovrflw\Desktop\EntityEscuelaDeportiva\Entity_Framework_Escuela_Deportiv
 C:\Users\ovrflw\Desktop\EntityEscuelaDeportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.pdb
 C:\Users\ovrflw\Desktop\EntityEscuelaDeportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.genruntimeconfig.cache
 C:\Users\ovrflw\Desktop\EntityEscuelaDeportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\ref\Entity_Framework_Escuela_Deportiva.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Rotativa.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\APIMatic.Core.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.Bcl.HashCode.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Microsoft.Json.Pointer.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Polly.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\Square.dll
