@@ -123,10 +123,11 @@ public partial class EscuelaDeportivaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Estudiante_Acudiente");
 
-            entity.HasOne(d => d.IdFacturaNavigation).WithMany(p => p.Estudiantes)
-                .HasForeignKey(d => d.IdFactura)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Estudiante_Factura");
+            entity.HasOne(d => d.FacturaNavigation).WithMany(p => p.Estudiantes)
+                    .HasForeignKey(d => d.Doc)
+                    .HasPrincipalKey(p => p.Doc)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Estudiante_Factura");
 
             entity.HasOne(d => d.IdGrupoNavigation).WithMany(p => p.Estudiantes)
                 .HasForeignKey(d => d.IdGrupo)
@@ -143,6 +144,7 @@ public partial class EscuelaDeportivaContext : DbContext
             entity.Property(e => e.IdFactura).ValueGeneratedNever();
             entity.Property(e => e.FechaFac).HasColumnName("Fecha_Fac");
             entity.Property(e => e.ValorFac).HasColumnName("Valor_Fac");
+            entity.Property(e => e.Doc).IsRequired();
         });
 
         modelBuilder.Entity<Foro>(entity =>

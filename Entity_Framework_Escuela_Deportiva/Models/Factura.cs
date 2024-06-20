@@ -11,5 +11,7 @@ public partial class Factura
 
     public int ValorFac { get; set; }
 
+    public int Doc { get; set; }
+
     public virtual ICollection<Estudiante> Estudiantes { get; set; } = new List<Estudiante>();
 }

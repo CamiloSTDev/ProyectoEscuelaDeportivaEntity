@@ -1,7 +1,7 @@
 ﻿using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 
 public class FacturaController : Controller
@@ -17,56 +17,55 @@ public class FacturaController : Controller
     {
         return View();
     }
-    private int CalcularValorFactura( FacturaController @this,string docNumber, Estudiante? estudiante)
+
+    private int CalcularValorFactura(string docNumber)
     {
-        var estudiante2 = _context.Estudiantes.FirstOrDefault(e => Convert.ToString(e.Doc) == docNumber);
+        var estudiante = _context.Estudiantes.FirstOrDefault(e => Convert.ToString(e.Doc) == docNumber);
 
-            // Use the IdFactura from the Estudiante object to query the Factura table
-            var grupo = _context.Grupos
-                .Include(f => f.Estudiantes)
-                .FirstOrDefault(f => f.IdGrupo == estudiante2.IdGrupo);
-            switch (estudiante2.IdGrupo)
-            {
-                case 1:
-                    return 45;
-                case 2:
-                    return 50;
-                case 3:
-                    return 55;
-                case 4:
+        if (estudiante == null)
+        {
+            throw new Exception("Estudiante no encontrado");
+        }
 
-                    return 60;
-                default:
+        var grupo = _context.Grupos
+            .Include(g => g.Estudiantes)
+            .FirstOrDefault(g => g.IdGrupo == estudiante.IdGrupo);
 
-                    throw new Exception("IdGrupo no válido");
-            }
+        if (grupo == null)
+        {
+            throw new Exception("Grupo no encontrado");
+        }
 
+        return grupo.IdGrupo switch
+        {
+            1 => 45,
+            2 => 50,
+            3 => 55,
+            4 => 60,
+            _ => throw new Exception("IdGrupo no válido")
+        };
     }
 
-        public  IActionResult GetInvoiceByDocNumber(FacturaController @this, string docNumber, Estudiante? estudiante)
+    public IActionResult GetInvoiceByDocNumber(string docNumber)
+    {
+        var estudiante = _context.Estudiantes.FirstOrDefault(e => Convert.ToString(e.Doc) == docNumber);
+
+        if (estudiante == null)
         {
-            // Query the Estudiante table based on the docNumber
-            estudiante = @this._context.Estudiantes.FirstOrDefault(e => Convert.ToString(e.Doc) == docNumber);
-
-            if (estudiante != null)
-            {
-                // Use the IdFactura from the Estudiante object to query the Factura table
-                var invoice = @this._context.Facturas
-                    .Include(f => f.Estudiantes)
-                    .FirstOrDefault(f => f.IdFactura == estudiante.IdFactura);
-
-                if (invoice != null)
-                {
-                    return @this.View("Index", invoice);
-                }
-                else
-                {
-                    return @this.NotFound();
-                }
-            }
-            else
-            {
-                return @this.NotFound();
-            }
+            return NotFound();
         }
+
+        var factura = _context.Facturas
+            .Include(f => f.Estudiantes)
+            .FirstOrDefault(f => f.Doc == estudiante.Doc);
+
+        if (factura == null)
+        {
+            return NotFound();
+        }
+
+        factura.ValorFac = CalcularValorFactura(docNumber);
+
+        return View("Index", factura);
+    }
 }

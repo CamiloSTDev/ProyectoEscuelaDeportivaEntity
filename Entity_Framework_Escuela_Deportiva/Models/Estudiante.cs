@@ -25,15 +25,13 @@ public partial class Estudiante
 
     public int IdGrupo { get; set; }
 
-    public int IdFactura { get; set; }
-
     public int IdAcudiente { get; set; }
 
     public virtual ICollection<Foro> Foros { get; set; } = new List<Foro>();
 
     public virtual Acudiente IdAcudienteNavigation { get; set; } = null!;
 
-    public virtual Factura IdFacturaNavigation { get; set; } = null!;
-
     public virtual Grupo IdGrupoNavigation { get; set; } = null!;
+
+    public virtual Factura FacturaNavigation { get; set; } = null!;
 }
