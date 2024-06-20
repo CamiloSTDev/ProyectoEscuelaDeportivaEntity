@@ -1,0 +1,35 @@
+﻿@model List<Factura>
+
+<h1>Actualizar Factura</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id Factura</th>
+                <th>Fecha de Factura</th>
+                <th>Valor de Factura</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var factura in Model)
+            {
+                <tr>
+                    <td>@factura.IdFactura</td>
+                    <td>@factura.FechaFac.ToShortDateString()</td>
+                    <td>@factura.ValorFac</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@factura.IdFactura" class="btn btn-primary">Editar</a>
+                        <!-- Agregar más acciones si es necesario -->
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay facturas disponibles.</p>
+}

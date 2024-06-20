@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Factura\UpdateInvoice.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Factura\UpdateInvoice.cshtml" />
     <None Include="Views\Horario\Index.cshtml" />
     <None Include="wwwroot\js\calendar.js" />
   </ItemGroup>
@@ -31,6 +36,14 @@
     <Content Update="wwwroot\horarios.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Factura\UpdateInvoice.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Factura\UpdateInvoice.cshtml" />
   </ItemGroup>
 
 </Project>

@@ -1,49 +1,55 @@
 ﻿@model Factura
 
-<h1>Factura Detalles</h1>
+<h1 class="text-2xl font-bold mb-4">Factura Detalles</h1>
 
-<form asp-action="GetInvoiceByDocNumber">
-    <div class="form-group">
-        <label for="docNumber" class="control-label">Documento:</label>
-        <input type="text" id="docNumber" name="docNumber" class="form-control" required />
+<form asp-action="GetInvoiceByDocNumber" method="get" class="max-w-sm mb-8">
+    <div class="mb-4">
+        <label for="docNumber" class="block text-sm font-medium text-gray-700">Documento:</label>
+        <input type="text" id="docNumber" name="docNumber" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required />
     </div>
-    <div class="form-group">
-        <input type="submit" value="Consultar" class="btn btn-primary" />
+    <div>
+        <input type="submit" value="Consultar" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer" />
     </div>
 </form>
 
 @if (Model != null)
 {
-    <h2>Información de la Factura</h2>
-    <table class="table table-striped">
-        <tr>
-            <th>Fecha de Factura</th>
-            <td>@Model.FechaFac</td>
+    <h2 class="text-xl font-bold mb-4">Información de la Factura</h2>
+    <table class="min-w-full divide-y divide-gray-200">
+        <tr class="bg-gray-50">
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha de Factura</th>
+            <td class="px-6 py-3 text-left text-xs font-medium text-gray-900">@Model.FechaFac.ToShortDateString()</td>
         </tr>
-        <tr>
-            <th>Valor de Factura</th>
-            <td>@Model.ValorFac</td>
+        <tr class="bg-white">
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Valor de Factura</th>
+            <td class="px-6 py-3 text-left text-xs font-medium text-gray-900">@Model.ValorFac.ToString("C")</td>
         </tr>
     </table>
 
-    <h2>Estudiantes Asociados</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Documento</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var estudiante in Model.Estudiantes)
-            {
+    <h2 class="text-xl font-bold mt-8 mb-4">Estudiantes Asociados</h2>
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
                 <tr>
-                    <td>@estudiante.Nombres</td>
-                    <td>@estudiante.Apellidos</td>
-                    <td>@estudiante.Doc</td>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Apellido</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Documento</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                @foreach (var estudiante in Model.Estudiantes)
+                {
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">@estudiante.Nombres</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">@estudiante.Apellidos</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">@estudiante.Doc</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p class="mt-8">No se encontraron facturas para el documento proporcionado.</p>
 }
