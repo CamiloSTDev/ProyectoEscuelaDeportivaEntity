@@ -17,7 +17,5 @@ public partial class Escuela
 
     public int IdTorneo { get; set; }
 
-    public virtual ICollection<Foro> Foros { get; set; } = new List<Foro>();
-
     public virtual Torneo IdTorneoNavigation { get; set; } = null!;
 }

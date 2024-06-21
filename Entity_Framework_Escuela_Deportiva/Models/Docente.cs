@@ -12,6 +12,8 @@ public partial class Docente
     public long Telefono { get; set; }
 
     public int IdGrupo { get; set; }
+
     public string Contraseña { get; set; } = null!;
+
     public virtual Grupo IdGrupoNavigation { get; set; } = null!;
 }

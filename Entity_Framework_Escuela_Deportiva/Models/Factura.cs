@@ -13,5 +13,5 @@ public partial class Factura
 
     public int Doc { get; set; }
 
-    public virtual ICollection<Estudiante> Estudiantes { get; set; } = new List<Estudiante>();
+    public virtual Estudiante DocNavigation { get; set; } = null!;
 }

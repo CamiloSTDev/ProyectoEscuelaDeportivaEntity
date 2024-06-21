@@ -22,22 +22,26 @@ public class FacturaController : Controller
     [HttpGet]
     public IActionResult GetInvoiceByDocNumber(string docNumber)
     {
-        var estudiante = _context.Estudiantes.FirstOrDefault(e => Convert.ToString(e.Doc) == docNumber);
+        if (string.IsNullOrEmpty(docNumber))
+        {
+            TempData["ErrorMessage"] = "Por favor, ingrese un número de documento.";
+            return RedirectToAction("Index");
+        }
+
+        var estudiante = _context.Estudiantes.FirstOrDefault(e => e.Doc.ToString() == docNumber);
 
         if (estudiante == null)
         {
-            // Mostrar alerta de estudiante no encontrado
             TempData["ErrorMessage"] = "Estudiante no encontrado";
             return RedirectToAction("Index");
         }
 
         var factura = _context.Facturas
-            .Include(f => f.Estudiantes)
+            .Include(f => f.DocNavigation) // Incluir la navegación a Estudiante
             .FirstOrDefault(f => f.Doc == estudiante.Doc);
 
         if (factura == null)
         {
-            // Mostrar alerta de factura no encontrada
             TempData["ErrorMessage"] = "Factura no encontrada";
             return RedirectToAction("Index");
         }
@@ -48,7 +52,10 @@ public class FacturaController : Controller
     // Acción para mostrar la vista UpdateInvoice (para administrador)
     public IActionResult UpdateInvoice()
     {
-        var facturas = _context.Facturas.Include(f => f.Estudiantes).ToList();
+        var facturas = _context.Facturas
+            .Include(f => f.DocNavigation) // Incluir la navegación a Estudiante
+            .ToList();
+
         return View(facturas); // Mostrar la vista UpdateInvoice con la lista de facturas
     }
 
@@ -57,7 +64,7 @@ public class FacturaController : Controller
     public IActionResult UpdateInvoice(int facturaId)
     {
         var factura = _context.Facturas
-            .Include(f => f.Estudiantes)
+            .Include(f => f.DocNavigation) // Incluir la navegación a Estudiante
             .FirstOrDefault(f => f.IdFactura == facturaId);
 
         if (factura == null)
@@ -71,5 +78,4 @@ public class FacturaController : Controller
 
         return RedirectToAction("UpdateInvoice"); // Redirigir a la acción UpdateInvoice (GET) después de actualizar
     }
-
 }

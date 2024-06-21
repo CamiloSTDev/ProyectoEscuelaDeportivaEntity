@@ -27,11 +27,9 @@ public partial class Estudiante
 
     public int IdAcudiente { get; set; }
 
-    public virtual ICollection<Foro> Foros { get; set; } = new List<Foro>();
+    public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
     public virtual Acudiente IdAcudienteNavigation { get; set; } = null!;
 
     public virtual Grupo IdGrupoNavigation { get; set; } = null!;
-
-    public virtual Factura FacturaNavigation { get; set; } = null!;
 }

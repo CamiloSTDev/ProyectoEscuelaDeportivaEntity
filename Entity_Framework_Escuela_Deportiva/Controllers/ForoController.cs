@@ -1,5 +1,6 @@
 ﻿using Entity_Framework_Escuela_Deportiva.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Claims;
@@ -35,30 +36,26 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Asignar valores automáticos
-                foro.IdEscuela = 123456;
-
-                // Obtener el Id del estudiante activo
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (!string.IsNullOrEmpty(userId) && int.TryParse(userId, out int idEstudiante))
+                try
                 {
-                    foro.IdEstudiante = idEstudiante;
+                    // Agregar el foro al contexto y guardar los cambios
+                    _context.Foros.Add(foro);
+                    await _context.SaveChangesAsync();
+
+                    TempData["SuccessMessage"] = "Publicación creada exitosamente.";
+                    return RedirectToAction("Index");
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Manejar el caso en el que no se pueda obtener el Id del estudiante
-                    TempData["ErrorMessage"] = "No se pudo obtener el Id del estudiante.";
-                    return RedirectToAction(nameof(Index));
+                    // Manejar otros tipos de excepciones si es necesario
+                    TempData["ErrorMessage"] = "Error al crear la publicación: " + ex.Message;
+                    return View(foro); // Mostrar la vista Create con los datos ingresados
                 }
-
-                _context.Foros.Add(foro);
-                await _context.SaveChangesAsync();
-
-                TempData["SuccessMessage"] = "Publicación creada exitosamente.";
-                return RedirectToAction(nameof(Index));
             }
 
-            TempData["ErrorMessage"] = "No se pudo crear la publicación.";
+            // Si hay errores en el ModelState, mostrar mensajes de error
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+            TempData["ErrorMessage"] = "No se pudo crear la publicación. Verifique los datos ingresados. Errores: " + string.Join(", ", errors);
             return View(foro);
         }
     }

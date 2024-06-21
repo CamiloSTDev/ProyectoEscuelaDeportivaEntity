@@ -14,5 +14,4 @@ public partial class Horario
     public TimeOnly HoraFin { get; set; }
 
     public virtual ICollection<Grupo> Grupos { get; set; } = new List<Grupo>();
-
 }

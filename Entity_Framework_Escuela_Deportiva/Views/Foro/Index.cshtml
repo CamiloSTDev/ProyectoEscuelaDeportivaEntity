@@ -11,23 +11,20 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            max-height: calc(100vh - 100px); /* altura máxima del contenedor del foro */
-
-            overflow-y: auto; /* desplazamiento vertical */
+            max-height: calc(100vh - 100px); /* Altura máxima del contenedor del foro */
+            overflow-y: auto; /* Desplazamiento vertical */
         }
 
-
             #foroMain main {
-                flex: 1; /* ocupa el espacio restante */
-
+                flex: 1; /* Ocupa el espacio restante */
                 padding: 20px;
             }
 
-
-            #foroMain footer {
+            #foroMain .publicacion {
                 background-color: #f7f7f7;
-                padding: 20px;
-                text-align: center;
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin-bottom: 20px;
             }
     </style>
 </head>
@@ -49,7 +46,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 @foreach (var foro in Model)
                 {
-                    <div class="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
+                    <div class="publicacion bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg">
                         <h2 class="text-lg font-bold mb-2">@foro.Titulo</h2>
                         <p class="text-zinc-600 dark:text-zinc-300">@foro.Contenido</p>
                     </div>
@@ -57,7 +54,7 @@
             </div>
         </main>
         <footer class="bg-zinc-200 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 p-4">
-            <p>&copy; 2024 Next Gen Forum. Todos los derechos reservados.</p>
+            <p>© 2024 Next Gen Forum. Todos los derechos reservados.</p>
         </footer>
     </div>
 </body>

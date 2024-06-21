@@ -560,3 +560,4 @@ C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_F
 C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.pdb
 C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\Entity_Framework_Escuela_Deportiva.genruntimeconfig.cache
 C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\obj\Debug\net8.0\ref\Entity_Framework_Escuela_Deportiva.dll
+C:\Users\Aprendiz\Desktop\Prueba Entity CodeFirst con Escuela Deportiva\Entity_Framework_Escuela_Deportiva\bin\Debug\net8.0\BCrypt.Net-Next.dll

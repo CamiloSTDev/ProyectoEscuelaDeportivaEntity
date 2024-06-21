@@ -33,6 +33,10 @@ public partial class EscuelaDeportivaContext : DbContext
 
     public virtual DbSet<Torneo> Torneos { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=305-08\\SQLEXPRESS; database=Escuela_Deportiva; integrated security=true;TrustServerCertificate=True;");
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Acudiente>(entity =>
@@ -123,12 +127,6 @@ public partial class EscuelaDeportivaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Estudiante_Acudiente");
 
-            entity.HasOne(d => d.FacturaNavigation).WithMany(p => p.Estudiantes)
-                    .HasForeignKey(d => d.Doc)
-                    .HasPrincipalKey(p => p.Doc)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Estudiante_Factura");
-
             entity.HasOne(d => d.IdGrupoNavigation).WithMany(p => p.Estudiantes)
                 .HasForeignKey(d => d.IdGrupo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -144,26 +142,20 @@ public partial class EscuelaDeportivaContext : DbContext
             entity.Property(e => e.IdFactura).ValueGeneratedNever();
             entity.Property(e => e.FechaFac).HasColumnName("Fecha_Fac");
             entity.Property(e => e.ValorFac).HasColumnName("Valor_Fac");
-            entity.Property(e => e.Doc).IsRequired();
+
+            entity.HasOne(d => d.DocNavigation).WithMany(p => p.Facturas)
+                .HasForeignKey(d => d.Doc)
+                .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
         modelBuilder.Entity<Foro>(entity =>
         {
-            entity.HasKey(e => e.IdForo).HasName("PK__foro__007D03DF2FD5AD2B");
+            entity.HasKey(e => e.IdForo).HasName("PK_IdForo");
 
             entity.ToTable("foro");
 
-            entity.Property(e => e.IdForo).ValueGeneratedNever();
-
-            entity.HasOne(d => d.IdEscuelaNavigation).WithMany(p => p.Foros)
-                .HasForeignKey(d => d.IdEscuela)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_foro_Escuela");
-
-            entity.HasOne(d => d.IdEstudianteNavigation).WithMany(p => p.Foros)
-                .HasForeignKey(d => d.IdEstudiante)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_foro_TblPersona");
+            entity.Property(e => e.Contenido).HasDefaultValue("");
+            entity.Property(e => e.Titulo).HasDefaultValue("");
         });
 
         modelBuilder.Entity<Grupo>(entity =>

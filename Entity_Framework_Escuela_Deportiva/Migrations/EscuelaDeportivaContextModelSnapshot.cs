@@ -206,34 +206,51 @@ namespace Entity_Framework_Escuela_Deportiva.Migrations
                     b.HasKey("IdFactura")
                         .HasName("PK__Factura__50E7BAF1E27E14B2");
 
+                    b.HasIndex("Doc");
+
                     b.ToTable("Factura", (string)null);
                 });
 
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Foro", b =>
                 {
                     b.Property<int>("IdForo")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdForo"));
 
                     b.Property<string>("Contenido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("");
+
+                    b.Property<int?>("EscuelaIdEscuela")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EstudianteDoc")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdEscuela")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(123456);
 
                     b.Property<int>("IdEstudiante")
                         .HasColumnType("int");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("");
 
                     b.HasKey("IdForo")
-                        .HasName("PK__foro__007D03DF2FD5AD2B");
+                        .HasName("PK_IdForo");
 
-                    b.HasIndex("IdEscuela");
+                    b.HasIndex("EscuelaIdEscuela");
 
-                    b.HasIndex("IdEstudiante");
+                    b.HasIndex("EstudianteDoc");
 
                     b.ToTable("foro", (string)null);
                 });
@@ -343,13 +360,6 @@ namespace Entity_Framework_Escuela_Deportiva.Migrations
 
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Estudiante", b =>
                 {
-                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Factura", "FacturaNavigation")
-                        .WithMany("Estudiantes")
-                        .HasForeignKey("Doc")
-                        .HasPrincipalKey("Doc")
-                        .IsRequired()
-                        .HasConstraintName("FK_Estudiante_Factura");
-
                     b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Acudiente", "IdAcudienteNavigation")
                         .WithMany("Estudiantes")
                         .HasForeignKey("IdAcudiente")
@@ -362,30 +372,30 @@ namespace Entity_Framework_Escuela_Deportiva.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_TblPersona_Grupo");
 
-                    b.Navigation("FacturaNavigation");
-
                     b.Navigation("IdAcudienteNavigation");
 
                     b.Navigation("IdGrupoNavigation");
                 });
 
+            modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Factura", b =>
+                {
+                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Estudiante", "DocNavigation")
+                        .WithMany("Facturas")
+                        .HasForeignKey("Doc")
+                        .IsRequired();
+
+                    b.Navigation("DocNavigation");
+                });
+
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Foro", b =>
                 {
-                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Escuela", "IdEscuelaNavigation")
+                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Escuela", null)
                         .WithMany("Foros")
-                        .HasForeignKey("IdEscuela")
-                        .IsRequired()
-                        .HasConstraintName("FK_foro_Escuela");
+                        .HasForeignKey("EscuelaIdEscuela");
 
-                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Estudiante", "IdEstudianteNavigation")
+                    b.HasOne("Entity_Framework_Escuela_Deportiva.Models.Estudiante", null)
                         .WithMany("Foros")
-                        .HasForeignKey("IdEstudiante")
-                        .IsRequired()
-                        .HasConstraintName("FK_foro_TblPersona");
-
-                    b.Navigation("IdEscuelaNavigation");
-
-                    b.Navigation("IdEstudianteNavigation");
+                        .HasForeignKey("EstudianteDoc");
                 });
 
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Grupo", b =>
@@ -411,12 +421,9 @@ namespace Entity_Framework_Escuela_Deportiva.Migrations
 
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Estudiante", b =>
                 {
-                    b.Navigation("Foros");
-                });
+                    b.Navigation("Facturas");
 
-            modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Factura", b =>
-                {
-                    b.Navigation("Estudiantes");
+                    b.Navigation("Foros");
                 });
 
             modelBuilder.Entity("Entity_Framework_Escuela_Deportiva.Models.Grupo", b =>

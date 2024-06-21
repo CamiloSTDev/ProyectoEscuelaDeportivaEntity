@@ -111,10 +111,4 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
         }
 
     }
-
-
-
-
-
-
 }
