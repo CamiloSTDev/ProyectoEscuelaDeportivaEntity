@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {}
+    "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {
+    "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+        "projectUniqueName": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
         "projectName": "Entity_Framework_Escuela_Deportiva",
-        "projectPath": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
-        "packagesPath": "C:\\Users\\Aprendiz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aprendiz\\Desktop\\Prueba Entity CodeFirst con Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
+        "projectPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+        "packagesPath": "C:\\Users\\Isagi06#15\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aprendiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Isagi06#15\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -80,17 +84,21 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.SqlServer.Server": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.2, )"
             },
-            "Rotativa": {
-              "target": "Package",
-              "version": "[1.7.3, )"
-            },
             "Square": {
               "target": "Package",
               "version": "[37.1.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -112,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

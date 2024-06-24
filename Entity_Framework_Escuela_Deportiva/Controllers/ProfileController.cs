@@ -3,70 +3,63 @@ using Entity_Framework_Escuela_Deportiva.Data;
 using Entity_Framework_Escuela_Deportiva.Models;
 using Entity_Framework_Escuela_Deportiva.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Data.SqlClient;
 
 namespace Entity_Framework_Escuela_Deportiva.Controllers
 {
+    [Authorize] // Asegúrate de que solo los usuarios autenticados puedan acceder
     public class ProfileController : Controller
     {
-        public void ConfigureServices(IServiceCollection services)
+        private readonly EscuelaDeportivaContext _context;
+
+        public ProfileController()
         {
-            services.AddIdentity<IdentityUser, IdentityRole>()
-               .AddEntityFrameworkStores<ApplicationDbContext>()
-               .AddDefaultTokenProviders();
+            _context = new EscuelaDeportivaContext();
         }
 
-        private readonly UserManager<IdentityUser> _editContext;
-        public ProfileController(UserManager<IdentityUser> editContext)
+        // GET: Account/Profile
+        public  ActionResult Profile(string pNombres, int pDoc)
         {
-            _editContext = editContext;
-        }
+            List<Estudiante> Lista = [];
+            string connectionString = "EcuelaDeportiva"; // Se define la cadena de conexión
 
-        [HttpGet]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditProfile()
-        {
-            var usuario_activo = await _editContext.GetUserAsync(User);
-            //if (usuario_activo == null) 
-            //{
-            //    return NotFound();
-            //}
-
-            var model = new UsuarioEditVM
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Nombres = usuario_activo.UserName!,
-                Correo = usuario_activo.Email!,
-                Telefono = usuario_activo.PhoneNumber!,
-                Contraseña = usuario_activo.PasswordHash!,
-                ConfirmarContraseña = usuario_activo.PasswordHash!,
-            };
+                conn.Open();
+                string query = "SELECT IdUsuario, Doc, Nombres, Apellidos, Telefono, Fecha_nac, Correo, Contraseña, AsisTotal, IdGrupo " +
+                               "FROM Estudiante " +
+                               "WHERE Nombres LIKE @pNombres AND Doc LIKE @pDoc";
 
-            return View(model);
-        }
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@pNombres", "%" + pNombres + "%");
+                cmd.Parameters.AddWithValue("@pDoc", "%" + pDoc + "%");
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditProfile(UsuarioEditVM model)
-        {
-            if (ModelState.IsValid)
-            {
-                return View(model);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Estudiante estudiante = new Estudiante
+                    {
+                        IdUsuario = reader.GetInt32(0),
+                        Doc = reader.GetInt32(1),
+                        Nombres = reader.GetString(2),
+                        Apellidos = reader.GetString(3),
+                        Telefono = reader.GetString(4),
+                        FechaNac = reader.GetString(5),
+                        Correo = reader.GetString(6),
+                        Contraseña = reader.GetString(7),
+                        AsisTotal = reader.GetInt32(8),
+                        IdGrupo = reader.GetInt32(9)
+                    };
+
+                    Lista.Add(estudiante);
+                }
+
+                conn.Close();
             }
 
-            var usuario_activo = await _editContext.GetUserAsync(User);
-            if (usuario_activo == null)
-            {
-                return NotFound();
-            }
-
-            usuario_activo.UserName = model.Nombres;
-            usuario_activo.Email = model.Correo;
-            usuario_activo.PhoneNumber = model.Telefono;
-            usuario_activo.PasswordHash = model.Contraseña;
-            usuario_activo.PasswordHash = model.ConfirmarContraseña;
-
-            await _editContext.UpdateAsync(usuario_activo);
-
-            return RedirectToAction(nameof(Index));
+            return View(Lista); // Devuelve la lista de personas a una vista
         }
     }
 }

@@ -80,7 +80,6 @@ namespace Entity_Framework_Escuela_Deportiva.Controllers
             Estudiante? usuario_encontrado = await _DbContext.Estudiantes.
                 Where(e =>
                 e.Doc == modelo.Doc &&
-                e.Nombres == modelo.Nombres &&
                 e.Contraseña == modelo.Contraseña
                 ).FirstOrDefaultAsync();
 
