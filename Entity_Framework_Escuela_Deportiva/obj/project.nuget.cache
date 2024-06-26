@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9dHbOF2gDrA=",
+  "dgSpecHash": "1T3BngcyuII=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+  "projectFilePath": "C:\\Users\\Isagi06#15\\Desktop\\proyecto_final2\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Isagi06#15\\.nuget\\packages\\apimatic.core\\0.3.10\\apimatic.core.0.3.10.nupkg.sha512",
     "C:\\Users\\Isagi06#15\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

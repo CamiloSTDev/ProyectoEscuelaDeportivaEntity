@@ -13874,11 +13874,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+      "projectUniqueName": "C:\\Users\\Isagi06#15\\Desktop\\proyecto_final2\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
       "projectName": "Entity_Framework_Escuela_Deportiva",
-      "projectPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
+      "projectPath": "C:\\Users\\Isagi06#15\\Desktop\\proyecto_final2\\Entity_Framework_Escuela_Deportiva\\Entity_Framework_Escuela_Deportiva.csproj",
       "packagesPath": "C:\\Users\\Isagi06#15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isagi06#15\\Desktop\\Escuela Deportiva\\Entity_Framework_Escuela_Deportiva\\obj\\",
+      "outputPath": "C:\\Users\\Isagi06#15\\Desktop\\proyecto_final2\\Entity_Framework_Escuela_Deportiva\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
