@@ -1,10 +1,18 @@
-﻿
+﻿@using System.Security.Claims
+
 @{
     ViewData["Title"] = "Home Page";
 }
 <main class="flex-1 p-6">
 
-
+    <div class="text-star">
+        @if (User.Identity!.IsAuthenticated)
+        {
+            <h3 class="display-4">Bienvenido/a
+                @User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault() 🙋🏻‍♀️🙋🏻‍♂️
+            </h3>
+        }
+    </div>
 
     <section class="row" aria-labelledby="aspnetTitle">
 
